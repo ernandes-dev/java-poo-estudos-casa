@@ -8,7 +8,7 @@ public class Livro {
 
 	public void adicionarPaginas(int quantidade) {
 		if (quantidade <= 0) {
-			System.out.println("Erro: A quantidade de paginas é insuficente."); 
+			System.out.println("Erro: A quantidade de páginas é insuficiente."); 
 		return;
 	}
 	this.quantidadeDePaginas += quantidade;
@@ -21,7 +21,7 @@ public class Livro {
 	        return;
 	    }
 	    if (this.quantidadeDePaginas < quantidade) {
-	    	System.out.println("Erro:Quantidade de paginas insuficiente para remover.");
+	    	System.out.println("Erro: Quantidade de páginas insuficiente para remover.");
 	    	return;
 	    }
 
