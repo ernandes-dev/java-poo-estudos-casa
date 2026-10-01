@@ -1,24 +1,38 @@
 package br.com.fiapride.main;
 
-import br.com.fiapride.model.Biblioteca;
-import br.com.fiapride.model.Livro;
+import br.com.fiapride.model.LivroFisico;
 import br.com.fiapride.model.Autor;
+import br.com.fiapride.model.Ebook;
+
 
 public class SistemaPrincipal {
 
     public static void main(String[] args) {
     	
-    	Autor autor1 = new Autor("J. R. R. Tolkien", "Fantasia", 20);
+    	System.out.println("--- Teste  ---");
     	
-    	Livro livro1 = new Livro("O Hobbit", 310, "Fantasia", autor1);
+    	Autor autor2 = new Autor("Neal Shusterman", "Ficção Científica", 20);
+    	
+    	Ebook kindle = new Ebook(80, "Scythe", 448, "Ficção Científica", autor2);
+    	
+    	LivroFisico capaDura = new LivroFisico(1000, "Thunderhead", 512, "Distopia", autor2);
 
-    	Biblioteca biblioteca1 = new Biblioteca("Biblioteca FIAP", livro1);
+        System.out.println("\n--- EBOOK ---");
 
-    	biblioteca1.exibirResumo();
-    	
-    	livro1.adicionarPaginas(50);
-    	
-    	System.out.println("Paginas do livro através da Biblioteca: " + biblioteca1.getLivroDisponivel().getQuantidadeDePaginas());
-    	System.out.println("Autor do livro: " + livro1.getAutor().getNome());
+        System.out.println("Título: " + kindle.getTitulo());
+        System.out.println("Páginas: " + kindle.getQuantidadeDePaginas());
+        System.out.println("Gênero: " + kindle.getGeneroLiterario());
+        System.out.println("Autor: " + kindle.getAutor().getNome());
+        System.out.println("Tamanho do arquivo: "
+                + kindle.getTamanhoArquivoMB() + " MB");
+
+        System.out.println("\n--- LIVRO FÍSICO ---");
+
+        System.out.println("Título: " + capaDura.getTitulo());
+        System.out.println("Páginas: " + capaDura.getQuantidadeDePaginas());
+        System.out.println("Gênero: " + capaDura.getGeneroLiterario());
+        System.out.println("Autor: " + capaDura.getAutor().getNome());
+        System.out.println("Peso: "
+                + capaDura.getPesoGramas() + " g");
     }
 }
