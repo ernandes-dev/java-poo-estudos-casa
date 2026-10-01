@@ -1,20 +1,41 @@
 package br.com.fiapride.main;
 
+import br.com.fiapride.model.Autor;
 import br.com.fiapride.model.Livro;
 
 public class TesteMeuLivro {
 
     public static void main(String[] args) {
 
-        Livro livro1 = new Livro("O Hobbit", 310, "Fantasia");
+        Autor autor1 = new Autor(
+                "J. R. R. Tolkien",
+                "Fantasia",
+                20
+        );
 
-        Livro livro2 = new Livro("Scythe", 448, "Ficção Científica");
+        Livro livro1 = new Livro(
+                "O Hobbit",
+                310,
+                "Fantasia",
+                autor1
+        );
 
-        System.out.println("O livro " + livro1.getTitulo() + " tem "
-                + livro1.getQuantidadeDePaginas() + " paginas.");
+        Livro livro2 = new Livro(
+                "Scythe",
+                448,
+                "Ficção Científica",
+                autor1
+        );
 
-        System.out.println("Ja " + livro2.getTitulo() + " tem "
-                + livro2.getQuantidadeDePaginas() + " paginas.");
+        System.out.println("O livro " + livro1.getTitulo()
+                + " tem " + livro1.getQuantidadeDePaginas() + " paginas.");
+
+        System.out.println("Autor: " + livro1.getAutor().getNome());
+
+        System.out.println("Ja " + livro2.getTitulo()
+                + " tem " + livro2.getQuantidadeDePaginas() + " paginas.");
+
+        System.out.println("Autor: " + livro2.getAutor().getNome());
 
         System.out.println("\n--- TESTANDO MÉTODOS ---");
 
@@ -35,6 +56,6 @@ public class TesteMeuLivro {
 
         // Teste inválido
         livro1.removerPaginas(500);
+
     }
 }
-
